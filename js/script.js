@@ -16,7 +16,9 @@
 // console.log() è nostro amico.
 // Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzioni più piccole.
 
-
+/********** 
+ * VARIABLES - OBJECTS - ARRAY
+***********/
 
 // Oggetto Member
 const member = {
@@ -64,22 +66,64 @@ const ourTeam = [
   }
 ];
 
-const cardBox = document.querySelector('.team-container');
 
-//Ciclo per creare le card
-for (const key in ourTeam) {
+/********** 
+ * START
+***********/
+
+const cardBox = document.querySelector('.team-container');
+const btnAdd = document.querySelector('#addMemberButton');
+
+stampCard(ourTeam);
+
+btnAdd.addEventListener('click',btnAddClick);
+
+
+
+/********** 
+ * FUNCTIONS
+***********/
+
+// Stampa in pagina le card dei membri
+function stampCard (arrayTeam){
+
+  // Svuota il contenuto dell'elemento cardBox
+  cardBox.innerHTML ="";
+
+  //Ciclo per creare le card
+  for (const key in arrayTeam) {
+      
+      cardBox.innerHTML += `
+      <div class="team-card">
+        <div class="card-image">
+          <img src="${arrayTeam[key].image}"
+            alt="${arrayTeam[key].name}"/>
+        </div>
+        <div class="card-text">
+          <h3>${arrayTeam[key].name}</h3>
+          <p>${arrayTeam[key].role}</p>
+        </div>
+      </div>`;
+  }
   
-    cardBox.innerHTML += `
-    
-    <div class="team-card">
-      <div class="card-image">
-        <img src="${ourTeam[key].image}"
-          alt="${ourTeam[key].name}"/>
-      </div>
-      <div class="card-text">
-        <h3>${ourTeam[key].name}</h3>
-        <p>${ourTeam[key].role}</p>
-      </div>
-    </div> 
-    `
-  };
+}
+
+// Funzione per aggiungere una nuova card al click del bottone "add"
+function btnAddClick (){ 
+
+  const nameNewMember = document.querySelector('#name');
+  const roleNewMember = document.querySelector('#role');
+  const imageNewMember = document.querySelector('#image');
+
+  ourTeam.push(
+    {
+      name: nameNewMember.value,
+      role: roleNewMember.value,
+      image: imageNewMember.value
+    }
+  );
+
+  stampCard(ourTeam);
+
+}
+
