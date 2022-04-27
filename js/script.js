@@ -36,31 +36,31 @@ const ourTeam = [
   {
     name: 'Angela Caroll',
     role: 'Chief Editor',
-    image: 'img/'
+    image: 'img/angela-caroll-chief-editor.jpg'
   },
 
   {
     name: 'Walter Gordon',
     role: 'Office Manager',
-    image: 'img/'
+    image: 'img/walter-gordon-office-manager.jpg'
   },
 
   {
     name: 'Angela Lopez',
     role: 'Social Media Manager',
-    image: 'img/'
+    image: 'img/angela-lopez-social-media-manager.jpg'
   },
 
   {
     name: 'Scott Estrada',
     role: 'Developer',
-    image: 'img/'
+    image: 'img/scott-estrada-developer.jpg'
   },
 
   {
     name: 'Barbara Ramos',
     role: 'Graphic Designer',
-    image: 'img/'
+    image: 'img/barbara-ramos-graphic-designer.jpg'
   }
 ];
 
@@ -73,12 +73,12 @@ for (const key in ourTeam) {
     
     <div class="team-card">
       <div class="card-image">
-        <img src="img/wayne-barnett-founder-ceo.jpg"
-          alt="Wayne Barnett"/>
+        <img src="${ourTeam[key].image}"
+          alt="${ourTeam[key].name}"/>
       </div>
       <div class="card-text">
-        <h3>Wayne Barnett</h3>
-        <p>Founder & CEO</p>
+        <h3>${ourTeam[key].name}</h3>
+        <p>${ourTeam[key].role}</p>
       </div>
     </div> 
     `
