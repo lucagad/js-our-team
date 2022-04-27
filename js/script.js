@@ -15,3 +15,71 @@
 
 // console.log() è nostro amico.
 // Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzioni più piccole.
+
+
+
+// Oggetto Member
+const member = {
+	name: 'Wayne Barnett',
+	role: 'Founder & CEO',
+  image: 'img/wayne-barnett-founder-ceo.jpg'
+};
+
+// Array contenete i membri del team
+const ourTeam = [
+  {
+    name: 'Wayne Barnett',
+    role: 'Founder & CEO',
+    image: 'img/wayne-barnett-founder-ceo.jpg'
+  },
+
+  {
+    name: 'Angela Caroll',
+    role: 'Chief Editor',
+    image: 'img/'
+  },
+
+  {
+    name: 'Walter Gordon',
+    role: 'Office Manager',
+    image: 'img/'
+  },
+
+  {
+    name: 'Angela Lopez',
+    role: 'Social Media Manager',
+    image: 'img/'
+  },
+
+  {
+    name: 'Scott Estrada',
+    role: 'Developer',
+    image: 'img/'
+  },
+
+  {
+    name: 'Barbara Ramos',
+    role: 'Graphic Designer',
+    image: 'img/'
+  }
+];
+
+const cardBox = document.querySelector('.team-container');
+
+//Ciclo per creare le card
+for (const key in ourTeam) {
+  
+    cardBox.innerHTML += `
+    
+    <div class="team-card">
+      <div class="card-image">
+        <img src="img/wayne-barnett-founder-ceo.jpg"
+          alt="Wayne Barnett"/>
+      </div>
+      <div class="card-text">
+        <h3>Wayne Barnett</h3>
+        <p>Founder & CEO</p>
+      </div>
+    </div> 
+    `
+  };
