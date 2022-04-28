@@ -105,7 +105,6 @@ function stampCard (arrayTeam){
         </div>
       </div>`;
   }
-  
 }
 
 // Funzione per aggiungere una nuova card al click del bottone "add"
@@ -124,6 +123,10 @@ function btnAddClick (){
   );
 
   stampCard(ourTeam);
+
+  nameNewMember.value = "";
+  roleNewMember.value = "";
+  imageNewMember.value = "";
 
 }
 
